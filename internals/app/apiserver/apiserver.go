@@ -1,7 +1,9 @@
 package apiserver
 
 import (
+	"html/template"
 	"net/http"
+
 	"github.com/gorilla/mux"
 	"github.com/sirupsen/logrus"
 )
@@ -13,8 +15,7 @@ type APIServer struct {
 	router *mux.Router
 }
 
-// var tpl = template.Must(template.ParseFiles("./front/html/mainPage.html"))
-// var js = template.Must(template.ParseFiles("./front/js/script.js"))
+var htmlTemplate = template.Must(template.ParseFiles("./frond/mainPage.html"))
 
 //New ...
 func New(config *Config) *APIServer {
@@ -49,17 +50,10 @@ func (s *APIServer) configureLogger() error {
 
 func (s *APIServer) configureRouter() {
 	s.router.HandleFunc("/", s.handleHello())
-	// s.router.HandleFunc("/front/js/script.js", s.loadJSFile())
 }
 
 func (s *APIServer) handleHello() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		// tpl.Execute(w, nil)
+		htmlTemplate.Execute(w, nil)
 	}
 }
-
-// func (s *APIServer) loadJSFile() http.HandlerFunc {
-// 	return func(w http.ResponseWriter, r *http.Request) {
-// 		js.Execute(w, nil)
-// 	}
-// }

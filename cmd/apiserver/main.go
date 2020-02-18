@@ -4,7 +4,7 @@ import (
 	"flag"
 	"log"
 
-	"github.com/4ubak/ascii-web/internal/app/apiserver"
+	"github.com/4ubak/ascii-web/internals/app/apiserver"
 	"github.com/BurntSushi/toml"
 )
 
