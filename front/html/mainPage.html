@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>ASCII-WEB</title>
+  <link rel="stylesheet" type="text/css" href="github.com/4ubak/ascii-web/front/css/styles.css">
+  </head>
+  <body>
+    <h1>Welcome to ASCII-WEB converter</h1>
+    <header>
+      <form action="/" method="POST">
+        <p>
+          <label for="ascii">Выберите шрифт: </label>
+          <select name="ascii">
+              <option value="default">Default</option>
+              <option value="think">Think</option>
+              <option value="shadow">Shadow</option>
+          </select>
+        </p>
+        <p>
+          <label for="label">Напишите текст: </label>
+          <input name="text" id="text" placeholder="Type something"></input>
+        </p>
+        <p>
+          <input type="submit" value="Convert" name="submit">
+        </p>
+      </form>
+      <pre>{{.MyVar}}</pre>
+    </header>
+  </body> 
+</html>
